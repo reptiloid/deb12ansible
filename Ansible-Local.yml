@@ -1,9 +1,9 @@
 ---
-  - name: "Playing with Ansible localy"
+  - name: "Install some Pkgs localy"
     hosts: localhost
     connection: local 
     tasks:
-      # - import_tasks: backups/output_of_ls_command.yml
       - import_tasks: backups/update_cache.yml
       - import_tasks: tasks/apt_install_pkgs.yml
+      - import_tasks: tasks/qtile_install.yml
 

@@ -1,5 +1,5 @@
 ---
-- name: "Install a list of debian packages"
+- name: "Install a list of Debian packages"
   become: true
   apt:
     pkg:
@@ -14,10 +14,5 @@
     - exa
     - ripgrep
     - fonts-dejavu-extra
-    # - feh
-    # - sxhkd
-    # - kitty
-    # - dmenu
-    # - rofi
-    # - ufw
+    - ufw
     # - bash-completion

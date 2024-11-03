@@ -1,0 +1,35 @@
+---
+- name: "Install X.org"
+  become: true
+  apt:
+    pkg:
+    - xserver-xorg
+    - xinit
+
+- name: "Install Qtile Required lib"
+  become: true
+  apt:
+    pkg:
+    - libpangocairo-1.0-0
+
+- name: "Install Qtile Required python pkgs"
+  become: true
+  apt:
+    pkg:
+    - python3-pip
+    - python3-xcffib
+    - python3-cairocffi
+
+- name: "Pip install Qtile"
+  become: false
+  ansible.builtin.shell: "pip install qtile --break-system-packages"
+
+- name: "Install a list of Qtile usefull pkgs"
+  become: true
+  apt:
+    pkg:
+    - feh
+    - sxhkd
+    - kitty
+    - rofi
+    # - dmenu
