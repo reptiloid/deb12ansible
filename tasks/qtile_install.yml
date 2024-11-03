@@ -5,6 +5,7 @@
     pkg:
     - xserver-xorg
     - xinit
+    - x11-xserver-utils
 
 - name: "Install Qtile Required lib"
   become: true

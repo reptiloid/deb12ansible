@@ -1,0 +1,9 @@
+---
+- name: "GetNF Install"
+  become: false
+  ansible.builtin.shell: "curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash"
+
+- name: "JetBrains, Ubuntu"
+  become: false
+  ansible.builtin.shell: "getnf -i UbuntuMono, JetBrainsMono"
+

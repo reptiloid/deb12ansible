@@ -9,4 +9,4 @@
       - import_tasks: tasks/am.yml
       - import_tasks: tasks/nix_install_singleuser_shellscript.yml
       - import_tasks: tasks/nix_install_pkgs.yml
-
+      - import_tasks: tasks/nf_fonts_install.yml
