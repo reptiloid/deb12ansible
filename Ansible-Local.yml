@@ -6,4 +6,5 @@
       - import_tasks: backups/update_cache.yml
       - import_tasks: tasks/apt_install_pkgs.yml
       - import_tasks: tasks/qtile_install.yml
+      - import_tasks: tasks/am.yml
 
