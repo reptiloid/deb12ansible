@@ -28,6 +28,14 @@
   ansible.builtin.shell: "am -i {{ item }}"
   loop:
     - nvim
+    # - nextcloud
+    # - photoqt
+    # - obsidian
+    # - vial-appimage
+    # - nuclear
+    # - vscodium
+    # - brave
+    # - floorp
 
 # - name: "Just execute 'am -f'"
 #   shell: "am -f"
