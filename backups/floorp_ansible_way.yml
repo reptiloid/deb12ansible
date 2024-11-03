@@ -1,0 +1,13 @@
+---
+- name: "Floorp: Import the apt key"
+  apt_key:
+    url: "https://ppa.ablaze.one/KEY.gpg"
+    state: present
+  become: true
+
+- name: "Floorp: Install deb repository"
+  apt_repository:
+    repo: "deb https://ppa.floorp.app/$(ARCH) ./"
+    # repo: "deb [signed-by=/usr/share/keyrings/Floorp.gpg] https://ppa.floorp.app/$(ARCH) ./"
+    state: present
+  become: true

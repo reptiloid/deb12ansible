@@ -1,0 +1,36 @@
+---
+- name: "Install (fuse3, jq) packages"
+  become: true
+  apt:
+    update_cache: true
+    pkg:
+    - fuse3
+    - jq
+
+- name: "Download AM installer"
+  ansible.builtin.get_url:
+    url: "https://raw.githubusercontent.com/ivan-hc/AM/main/INSTALL" 
+    dest: "{{ ansible_env.HOME }}/INSTALL"
+    mode: "0755"
+
+- name: "Run a INSTALL script"
+  become: true
+  ansible.builtin.command: "{{ ansible_env.HOME }}/INSTALL"
+
+- name: "Remove file (INSTALL script)"
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/INSTALL"
+    state: absent
+
+
+- name: "Install AppImage Pkgs"
+  become: false
+  ansible.builtin.shell: "am -i {{ item }}"
+  loop:
+    - nvim
+
+# - name: "Just execute 'am -f'"
+#   shell: "am -f"
+#   register: "output"
+#   
+# - debug: var=output.stdout_lines

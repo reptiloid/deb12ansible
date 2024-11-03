@@ -1,0 +1,14 @@
+---
+- name: "Install a list of packages"
+  become: true
+  apt:
+    pkg:
+    - net-tools
+    - unzip
+    - tar
+    - gpg
+    - curl
+    - wget
+    # - feh
+    # - git
+    # - bash-completion

@@ -1,0 +1,7 @@
+---
+- name: "Grep sources"
+  shell: "grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/"
+  register: "output"
+  
+- debug: var=output.stdout_lines
+
