@@ -1,5 +1,5 @@
 ---
-- name: "Install a list of packages"
+- name: "Install a list of debian packages"
   become: true
   apt:
     pkg:
@@ -7,8 +7,17 @@
     - unzip
     - tar
     - gpg
-    - curl
+    - zoxide
+    - fzf
     - wget
+    - nala
+    - exa
+    - ripgrep
+    - fonts-dejavu-extra
     # - feh
-    # - git
+    # - sxhkd
+    # - kitty
+    # - dmenu
+    # - rofi
+    # - ufw
     # - bash-completion
