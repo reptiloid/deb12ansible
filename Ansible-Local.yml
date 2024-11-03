@@ -1,5 +1,5 @@
 ---
-  - name: "Install some Pkgs localy"
+  - name: "My GNU/Debian Setup"
     hosts: localhost
     connection: local 
     tasks:

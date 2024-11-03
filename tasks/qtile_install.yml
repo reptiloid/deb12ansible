@@ -24,7 +24,13 @@
   become: false
   ansible.builtin.shell: "pip install qtile --break-system-packages"
 
-- name: "Install a list of Qtile usefull pkgs"
+- name: "Create .xinitrc"
+  copy:
+    dest: "{{ ansible_env.HOME }}/.xinitrc"
+    content: |
+      exec qtile start
+
+- name: "Install a list of Qtile related pkgs"
   become: true
   apt:
     pkg:
