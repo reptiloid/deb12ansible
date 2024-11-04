@@ -1,11 +1,11 @@
 ---
-- name: "Install (yadm, git) packages"
-  become: true
-  apt:
-    update_cache: true
-    pkg:
-    - git
-    - yadm
+# - name: "Install (yadm, git) packages"
+#   become: true
+#   apt:
+#     update_cache: true
+#     pkg:
+#     - git
+#     - yadm
 
 - name: "yadm clone my dotfiles repo"
   ansible.builtin.command: "yadm clone {{ dotfiles_repo }}"
