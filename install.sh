@@ -2,7 +2,7 @@
 
 GIT_SRC=https://github.com/reptiloid
 
-install_git_ansible_pkgs() {
+install_deb_pkgs() {
 	echo
 	printf '%s\n' "Installing packages" && sleep 1
 	sudo apt install -y git ansible
@@ -15,14 +15,14 @@ clone_ansible_scripts_repo() {
 }
 
 
-start_ansible_test_playbook() {
-	ansible-playbook ~/DebInstall/Ansible-Local.yml
+run_ansible_playbook() {
+	ansible-playbook ~/DebInstall/my-setup-local.yml
 }
 
 main() {
-	install_git_ansible_pkgs
+	install_deb_pkgs
 	clone_ansible_scripts_repo
-	start_ansible_test_playbook
+	run_ansible_playbook
 }
 
 time main
