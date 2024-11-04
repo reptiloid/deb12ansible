@@ -35,9 +35,8 @@
     # - nuclear
     # - vscodium
     # - brave
-    # - floorp
 
-# - name: "Just execute 'am -f'"
+# - name: "List Installed Apps"
 #   shell: "am -f"
 #   register: "output"
 #   

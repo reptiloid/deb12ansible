@@ -7,9 +7,13 @@
     - git
     - yadm
 
-- name: "yadm clone repo"
-  ansible.builtin.command: "yadm clone --depth=1 {{ dotfiles_repo }}"
+- name: "yadm clone my dotfiles repo"
+  ansible.builtin.command: "yadm clone {{ dotfiles_repo }}"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
  
 - name: "yadm checkout"
-  ansible.builtin.command: 'yadm checkout "$HOME"'
+  ansible.builtin.command: 'yadm checkout "{{ ansible_env.HOME }}"'
+  args:
+    chdir: "{{ ansible_env.HOME }}"
  

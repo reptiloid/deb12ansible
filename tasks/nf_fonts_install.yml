@@ -7,4 +7,6 @@
   become: false
   # ansible.builtin.shell: 'getnf -i "UbuntuMono JetBrainsMono"'
   ansible.builtin.command: '{{ ansible_env.HOME }}/.local/bin/getnf -i "UbuntuMono JetBrainsMono"'
+  args:
+    chdir: "{{ ansible_env.HOME }}"
 
