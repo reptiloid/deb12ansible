@@ -3,6 +3,7 @@
     hosts: localhost
     connection: local 
     tasks:
+      - include_vars: vars/vars.yml
       - import_tasks: tasks/apt_install_pkgs.yml
       - import_tasks: tasks/qtile_install.yml
       - import_tasks: tasks/am.yml
