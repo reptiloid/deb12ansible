@@ -3,7 +3,8 @@
   become: false
   ansible.builtin.shell: "curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash"
 
-- name: "JetBrains, Ubuntu"
+- name: "Install JetBrains, Ubuntu nerd fonts"
   become: false
-  ansible.builtin.shell: "getnf -i UbuntuMono, JetBrainsMono"
+  # ansible.builtin.shell: 'getnf -i "UbuntuMono JetBrainsMono"'
+  ansible.builtin.command: '{{ ansible_env.HOME }}/.local/bin/getnf -i "UbuntuMono JetBrainsMono"'
 
