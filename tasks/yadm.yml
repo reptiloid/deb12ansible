@@ -1,19 +1,15 @@
 ---
-# - name: "Install (yadm, git) packages"
-#   become: true
-#   apt:
-#     update_cache: true
-#     pkg:
-#     - git
-#     - yadm
-
-- name: "yadm clone my dotfiles repo"
+- name: "Yadm clone my dotfiles repo"
   ansible.builtin.command: "yadm clone {{ dotfiles_repo }}"
   args:
     chdir: "{{ ansible_env.HOME }}"
  
-- name: "yadm checkout"
+- name: "Yadm checkout"
   ansible.builtin.command: 'yadm checkout "{{ ansible_env.HOME }}"'
   args:
     chdir: "{{ ansible_env.HOME }}"
  
+- name: "Update Font Cache"
+  ansible.builtin.command: 'fc-cache'
+  args:
+    chdir: "{{ ansible_env.HOME }}"
