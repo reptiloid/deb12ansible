@@ -1,0 +1,16 @@
+---
+- name: "Curl ble.sh nightly build"
+  become: false
+  ansible.builtin.command: "curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+
+- name: "Run a INSTALL script"
+  ansible.builtin.command: "bash ble-nightly/ble.sh --install ~/.local/share"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+
+- name: "Remove file (INSTALL script)"
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/ble-nightly/"
+    state: absent
