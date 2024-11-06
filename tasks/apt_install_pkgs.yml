@@ -16,6 +16,7 @@
     - ripgrep
     - fonts-dejavu-extra
     - ufw
+    - xclip
     - git
     - yadm
     # - bash-completion
