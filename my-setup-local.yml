@@ -11,4 +11,5 @@
       - import_tasks: tasks/nix_install_pkgs.yml
       - import_tasks: tasks/nf_fonts_install.yml
       - import_tasks: tasks/floorp_shell_install.yml
+      - import_tasks: tasks/install_kitty_terminal.yml
       - import_tasks: tasks/yadm.yml
