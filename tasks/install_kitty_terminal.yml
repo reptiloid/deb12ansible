@@ -1,7 +1,9 @@
 ---
 - name: "Run Kitty Install Script"
-  shell:
-    cmd: |
-      curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-        installer=version-0.35.2 launch=n
+  become: false
+  ansible.builtin.shell: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin installer=version-0.35.2 launch=n"
+  # shell:
+  #   cmd: |
+  #     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+  #       installer=version-0.35.2 launch=n
 
