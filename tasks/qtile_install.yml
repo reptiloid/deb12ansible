@@ -6,6 +6,7 @@
     - xserver-xorg
     - xinit
     - x11-xserver-utils
+    - xdg-user-dirs
 
 - name: "Install Qtile Required lib"
   become: true
@@ -37,6 +38,13 @@
     pkg:
     - feh
     - sxhkd
-    - kitty
     - rofi
+    # - kitty
     # - dmenu
+
+- name: "Create User Dirs"
+  ansible.builtin.command: "xdg-user-dirs-update"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  # become: false
+  # ansible.builtin.shell: "xdg-user-dirs-update"
