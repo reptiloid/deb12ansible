@@ -1,7 +1,6 @@
 ---
 - name: "Curl ble.sh nightly build"
-  become: false
-  ansible.builtin.command: "curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -"
+  ansible.builtin.shell: "curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -"
   args:
     chdir: "{{ ansible_env.HOME }}"
 
