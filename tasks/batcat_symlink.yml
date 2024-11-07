@@ -1,0 +1,12 @@
+---
+- name: "Make .local/bin dir if it doesn’t exist"
+  file:
+    path: "{{ ansible_env.HOME }}/.local/bin"
+    state: directory
+
+- name: "Bat Symlink"
+  file:
+    src: "/usr/bin/batcat"
+    dest: "{{ ansible_env.HOME }}/.local/bin/bat"
+    state: link
+ 

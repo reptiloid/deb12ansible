@@ -10,6 +10,7 @@
     - gpg
     - zoxide
     - fzf
+    - bat
     - wget
     - nala
     - exa
