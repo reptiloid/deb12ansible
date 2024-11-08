@@ -1,40 +1,41 @@
 ---
-- name: "Install (fuse3, jq) packages"
-  become: true
-  apt:
-    update_cache: true
-    pkg:
-    - fuse3
-    - jq
+- name: "Install AppImage Installer"
+  block:
+    - name: "Install (fuse3, jq) packages"
+      become: true
+      apt:
+        update_cache: true
+        pkg:
+        - fuse3
+        - jq
 
-- name: "Download AM installer"
-  ansible.builtin.get_url:
-    url: "https://raw.githubusercontent.com/ivan-hc/AM/main/INSTALL" 
-    dest: "{{ ansible_env.HOME }}/INSTALL"
-    mode: "0755"
+    - name: "Download AM installer"
+      ansible.builtin.get_url:
+        url: "https://raw.githubusercontent.com/ivan-hc/AM/main/INSTALL" 
+        dest: "{{ ansible_env.HOME }}/INSTALL"
+        mode: "0755"
 
-- name: "Run a INSTALL script"
-  become: true
-  ansible.builtin.command: "{{ ansible_env.HOME }}/INSTALL"
+    - name: "Run a INSTALL script"
+      become: true
+      ansible.builtin.command: "{{ ansible_env.HOME }}/INSTALL"
 
-- name: "Remove file (INSTALL script)"
-  ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/INSTALL"
-    state: absent
+    - name: "Remove file (INSTALL script)"
+      ansible.builtin.file:
+        path: "{{ ansible_env.HOME }}/INSTALL"
+        state: absent
 
-
-- name: "Install AppImage Pkgs"
-  become: false
-  ansible.builtin.shell: "am -i {{ item }}"
-  loop:
-    - nvim
-    # - nextcloud
-    # - photoqt
-    # - obsidian
-    # - vial-appimage
-    # - nuclear
-    # - vscodium
-    # - brave
+    - name: "Install AppImage Pkgs"
+      ansible.builtin.shell: "am -i {{ item }}"
+      loop:
+        - nvim
+        # - nextcloud
+        # - photoqt
+        # - obsidian
+        # - vial-appimage
+        # - nuclear
+        # - vscodium
+        # - brave
+  when: run_app_image_script
 
 # - name: "List Installed Apps"
 #   shell: "am -f"

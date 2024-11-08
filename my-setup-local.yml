@@ -16,4 +16,4 @@
       - import_tasks: tasks/blesh_install.yml
       - import_tasks: tasks/batcat_symlink.yml
       - import_tasks: tasks/yadm.yml
-      - import_tasks: tasks/test.yml
+      # - import_tasks: tasks/test.yml

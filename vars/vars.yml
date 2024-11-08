@@ -1,3 +1,4 @@
 ---
 dotfiles_repo: "https://github.com/reptiloid/dotfiles.git"
 run_tasks: true
+run_app_image_script: true
