@@ -1,0 +1,21 @@
+---
+- name: "Install X.org"
+  become: true
+  apt:
+    pkg:
+    - xserver-xorg
+    - xinit
+    - x11-xserver-utils
+    - xdg-user-dirs
+
+- name: "Install a list of Qtile related pkgs"
+  become: true
+  apt:
+    pkg:
+    - feh
+    - rofi
+
+- name: "Create User Dirs"
+  ansible.builtin.command: "xdg-user-dirs-update"
+  args:
+    chdir: "{{ ansible_env.HOME }}"

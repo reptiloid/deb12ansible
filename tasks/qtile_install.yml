@@ -1,13 +1,4 @@
 ---
-- name: "Install X.org"
-  become: true
-  apt:
-    pkg:
-    - xserver-xorg
-    - xinit
-    - x11-xserver-utils
-    - xdg-user-dirs
-
 - name: "Install Qtile Required lib"
   become: true
   apt:
@@ -26,25 +17,8 @@
   become: false
   ansible.builtin.shell: "pip install qtile --break-system-packages"
 
-- name: "Create .xinitrc"
-  copy:
-    dest: "{{ ansible_env.HOME }}/.xinitrc"
-    content: |
-      exec qtile start
-
-- name: "Install a list of Qtile related pkgs"
-  become: true
-  apt:
-    pkg:
-    - feh
-    - sxhkd
-    - rofi
-    # - kitty
-    # - dmenu
-
-- name: "Create User Dirs"
-  ansible.builtin.command: "xdg-user-dirs-update"
-  args:
-    chdir: "{{ ansible_env.HOME }}"
-  # become: false
-  # ansible.builtin.shell: "xdg-user-dirs-update"
+# - name: "Create .xinitrc"
+#   copy:
+#     dest: "{{ ansible_env.HOME }}/.xinitrc"
+#     content: |
+#       exec qtile start
