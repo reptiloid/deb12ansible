@@ -1,0 +1,9 @@
+---
+- name: "Execute tasks if condition is met"
+  block:
+    - name: "Task 1"
+      ansible.builtin.command: 'echo "This is task 1"'
+
+    - name: "Task 2"
+      ansible.builtin.command: 'echo "This is task 2"'
+  when: run_tasks

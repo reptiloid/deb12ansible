@@ -5,6 +5,7 @@
     tasks:
       - include_vars: vars/vars.yml
       - import_tasks: tasks/apt_install_pkgs.yml
+      - import_tasks: tasks/xorg_install.yml
       - import_tasks: tasks/qtile_install.yml
       - import_tasks: tasks/am.yml
       - import_tasks: tasks/nix_install_singleuser_shellscript.yml
@@ -15,3 +16,4 @@
       - import_tasks: tasks/blesh_install.yml
       - import_tasks: tasks/batcat_symlink.yml
       - import_tasks: tasks/yadm.yml
+      - import_tasks: tasks/test.yml
