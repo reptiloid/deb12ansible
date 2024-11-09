@@ -1,0 +1,21 @@
+---
+- name: "install base pkgs"
+  become: true
+  apt:
+    pkg:
+    - xserver-xorg
+    - xinit
+    - x11-xserver-utils
+    - xdg-user-dirs
+
+- name: "install related pkgs"
+  become: true
+  apt:
+    pkg:
+    - feh
+    - rofi
+
+- name: "create User Dirs"
+  ansible.builtin.command: "xdg-user-dirs-update"
+  args:
+    chdir: "{{ ansible_env.HOME }}"

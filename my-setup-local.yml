@@ -3,13 +3,12 @@
     hosts: localhost
     connection: local 
 
-    # roles:
-    #   - AppImage
-  
     tasks:
       - include_vars: vars/vars.yml
-      - import_tasks: tasks/apt_install_pkgs.yml
-      - import_tasks: tasks/xorg_install.yml
+      - import_tasks: tasks/apt_base_pkgs.yml
+
+      - include_role:
+          name: Xorg
 
       - include_role:
           name: Qtile
@@ -23,8 +22,9 @@
       - include_role:
           name: Nix
 
-      - import_tasks: tasks/nf_fonts_install.yml
-      - import_tasks: tasks/install_kitty_terminal.yml
-      - import_tasks: tasks/blesh_install.yml
-      - import_tasks: tasks/batcat_symlink.yml
+      - import_tasks: tasks/nf_fonts.yml
+      - import_tasks: tasks/kitty_terminal.yml
+      - import_tasks: tasks/blesh.yml
+      - import_tasks: tasks/batcat.yml
+
       - import_tasks: tasks/yadm.yml

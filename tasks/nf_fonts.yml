@@ -1,11 +1,8 @@
 ---
 - name: "GetNF Install"
-  become: false
   ansible.builtin.shell: "curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash"
 
-- name: "Install JetBrains, Ubuntu nerd fonts"
-  become: false
-  # ansible.builtin.shell: 'getnf -i "UbuntuMono JetBrainsMono"'
+- name: "Install JetBrains, Ubuntu Nerd Fonts"
   ansible.builtin.command: '{{ ansible_env.HOME }}/.local/bin/getnf -i "UbuntuMono JetBrainsMono"'
   args:
     chdir: "{{ ansible_env.HOME }}"
