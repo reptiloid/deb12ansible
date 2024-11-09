@@ -1,0 +1,24 @@
+---
+- name: "install Qtile Required lib"
+  become: true
+  apt:
+    pkg:
+    - libpangocairo-1.0-0
+
+- name: "install Qtile Required python pkgs"
+  become: true
+  apt:
+    pkg:
+    - python3-pip
+    - python3-xcffib
+    - python3-cairocffi
+
+- name: "pip install Qtile"
+  become: false
+  ansible.builtin.shell: "pip install qtile --break-system-packages"
+
+# - name: "Create .xinitrc"
+#   copy:
+#     dest: "{{ ansible_env.HOME }}/.xinitrc"
+#     content: |
+#       exec qtile start

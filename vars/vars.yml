@@ -17,6 +17,7 @@ apt_base_pkgs:
   - ripgrep
   - fonts-dejavu-extra
   - ufw
+  - opensnitch
   - xclip
   - git
   - yadm

@@ -1,0 +1,13 @@
+---
+- name: "put floorp gpg key to keyrings"
+  become: true
+  ansible.builtin.shell: "curl -fsSL https://ppa.ablaze.one/KEY.gpg | gpg --dearmor -o /usr/share/keyrings/Floorp.gpg"
+
+- name: "copy Floorp.list to sources.list.d/"
+  become: true
+  ansible.builtin.shell: "curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'"
+
+- name: "update APT cache"
+  become: true
+  apt:
+    update_cache: true

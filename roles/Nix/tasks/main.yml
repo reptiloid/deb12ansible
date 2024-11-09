@@ -1,0 +1,15 @@
+---
+# - name: "[test whether nix binary exists]"
+#   stat: path="{{ ansible_env.HOME }}/.nix-profile/bin/nix-env"
+#   become: false
+#   register: nix_env_binary
+ 
+# - debug: var=nix_env_binary.stat.path
+- name: "install Nix Single User"
+  become: false
+  ansible.builtin.shell: "curl -L https://nixos.org/nix/install | sh -s -- --no-daemon"
+  # when: nix_env_binary.stat.exists == False
+
+- name: "install Nix Pkgs"
+  ansible.builtin.shell: "{{ ansible_env.HOME }}/.nix-profile/bin/nix-env -iA nixpkgs.{{ item }}"
+  loop: "{{ nix_pkgs }}"

@@ -10,14 +10,20 @@
       - include_vars: vars/vars.yml
       - import_tasks: tasks/apt_install_pkgs.yml
       - import_tasks: tasks/xorg_install.yml
-      - import_tasks: tasks/qtile_install.yml
-      # - import_tasks: tasks/am.yml
+
+      - include_role:
+          name: Qtile
+
       - include_role:
           name: AppImage
-      - import_tasks: tasks/nix_install_singleuser_shellscript.yml
-      - import_tasks: tasks/nix_install_pkgs.yml
+
+      - include_role:
+          name: Floorp
+
+      - include_role:
+          name: Nix
+
       - import_tasks: tasks/nf_fonts_install.yml
-      - import_tasks: tasks/floorp_shell_install.yml
       - import_tasks: tasks/install_kitty_terminal.yml
       - import_tasks: tasks/blesh_install.yml
       - import_tasks: tasks/batcat_symlink.yml
