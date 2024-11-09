@@ -3,21 +3,21 @@
   become: true
   apt:
     update_cache: true
-    pkg:
-    - net-tools
-    - unzip
-    - tar
-    - gpg
-    - zoxide
-    - fzf
-    - bat
-    - wget
-    - nala
-    - exa
-    - ripgrep
-    - fonts-dejavu-extra
-    - ufw
-    - xclip
-    - git
-    - yadm
+    pkg: "{{ apt_base_pkgs }}"
+    # - net-tools
+    # - unzip
+    # - tar
+    # - gpg
+    # - zoxide
+    # - fzf
+    # - bat
+    # - wget
+    # - nala
+    # - exa
+    # - ripgrep
+    # - fonts-dejavu-extra
+    # - ufw
+    # - xclip
+    # - git
+    # - yadm
     # - bash-completion

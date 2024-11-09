@@ -2,3 +2,21 @@
 dotfiles_repo: "https://github.com/reptiloid/dotfiles.git"
 run_tasks: true
 run_app_image_script: true
+
+apt_base_pkgs:
+  - net-tools
+  - unzip
+  - tar
+  - gpg
+  - zoxide
+  - fzf
+  - bat
+  - wget
+  - nala
+  - exa
+  - ripgrep
+  - fonts-dejavu-extra
+  - ufw
+  - xclip
+  - git
+  - yadm
