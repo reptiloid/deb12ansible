@@ -26,15 +26,8 @@
 
     - name: "Install AppImage Pkgs"
       ansible.builtin.shell: "am -i {{ item }}"
-      loop:
-        - nvim
-        # - nextcloud
-        # - photoqt
-        # - obsidian
-        # - vial-appimage
-        # - nuclear
-        # - vscodium
-        # - brave
+      loop: "{{ app_image_pkgs }}"
+
   when: run_app_image_script
 
 # - name: "List Installed Apps"

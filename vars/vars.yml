@@ -20,3 +20,21 @@ apt_base_pkgs:
   - xclip
   - git
   - yadm
+
+app_image_pkgs:
+  - nvim
+  # - nextcloud
+  # - photoqt
+  # - obsidian
+  # - vial-appimage
+  # - nuclear
+  # - vscodium
+  # - brave
+
+nix_pkgs:
+  - yazi
+  - htop-vim
+  - fastfetch
+  - atuin
+  - lazygit
+  - picom

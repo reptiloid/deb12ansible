@@ -1,10 +1,4 @@
 ---
 - name: "Install Nix Pkgs"
   ansible.builtin.shell: "{{ ansible_env.HOME }}/.nix-profile/bin/nix-env -iA nixpkgs.{{ item }}"
-  loop:
-    - yazi
-    - htop-vim
-    - fastfetch
-    - atuin
-    - lazygit
-    - picom
+  loop: "{{ nix_pkgs }}"

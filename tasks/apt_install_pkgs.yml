@@ -4,20 +4,3 @@
   apt:
     update_cache: true
     pkg: "{{ apt_base_pkgs }}"
-    # - net-tools
-    # - unzip
-    # - tar
-    # - gpg
-    # - zoxide
-    # - fzf
-    # - bat
-    # - wget
-    # - nala
-    # - exa
-    # - ripgrep
-    # - fonts-dejavu-extra
-    # - ufw
-    # - xclip
-    # - git
-    # - yadm
-    # - bash-completion
