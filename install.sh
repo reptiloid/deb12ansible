@@ -12,13 +12,11 @@ install_deb_pkgs() {
 clone_ansible_scripts_repo() {
 	echo
 	printf '%s\n' "Cloning Ansible Scripts" && sleep 1
-	# git clone "$GIT_SRC"/deb12ansible.git DebInstall
 	git clone "$GIT_SRC"/deb12ansible.git "$INSTALL_DIR"
 }
 
 run_ansible_playbook() {
 	ansible-playbook ~/"$INSTALL_DIR"/my-setup-local.yml
-	# ansible-playbook ~/DebInstall/my-setup-local.yml
 }
 
 main() {
