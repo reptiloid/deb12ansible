@@ -19,8 +19,15 @@ apt_base_pkgs:
   - ufw
   - opensnitch
   - xclip
+  - btop
   - git
   - yadm
+
+xorg_additional_pkgs:
+  - feh
+  - rofi
+  - lxappearance
+  - bibata-cursor-theme
 
 app_image_pkgs:
   - nvim
@@ -34,8 +41,8 @@ app_image_pkgs:
 
 nix_pkgs:
   - yazi
-  - htop-vim
   - fastfetch
-  - atuin
   - lazygit
-  - picom
+  # - htop-vim
+  # - atuin
+  # - picom

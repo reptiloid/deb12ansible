@@ -11,11 +11,7 @@
 - name: "install related pkgs"
   become: true
   apt:
-    pkg:
-    - feh
-    - rofi
+    pkg: "{{ xorg_additional_pkgs }}"
 
 - name: "create User Dirs"
   ansible.builtin.command: "xdg-user-dirs-update"
-  args:
-    chdir: "{{ ansible_env.HOME }}"
