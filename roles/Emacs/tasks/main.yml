@@ -1,5 +1,6 @@
 ---
 - name: install emacs build dependencies
+  become: true
   apt:
     name: emacs
     state: build-dep
