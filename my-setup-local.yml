@@ -22,8 +22,7 @@
     # - include_role:
     #     name: Rustup
 
-
-    include_role:
+    - include_role:
         name: Emacs
 
     # - include_role:
