@@ -11,16 +11,12 @@
     src: 'ftp://ftp.gnu.org/pub/gnu/emacs/emacs-{{ emacs_version }}.tar.xz'
     dest: '/tmp/'
 
-# - name: emacs | build - configure
-#   command: ./configure {{ emacs_configure_opts }}
-#   args:
-#     chdir: '{{ emacs_temp_folder }}/emacs-{{ emacs_version }}'
-
 - name: emacs | build - build
   make:
     chdir: '/tmp/emacs-{{ emacs_version }}'
 
 - name: emacs | build - install (built from src)
+  become: true
   make:
     target: install
     chdir: '/temp/emacs-{{ emacs_version }}'
