@@ -19,8 +19,12 @@
     # - include_role:
     #     name: Floorp
 
-    - include_role:
-        name: Rustup
+    # - include_role:
+    #     name: Rustup
+
+
+    include_role:
+        name: Emacs
 
     # - include_role:
     #     name: Nix

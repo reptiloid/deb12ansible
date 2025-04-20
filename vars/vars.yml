@@ -3,6 +3,8 @@ dotfiles_repo: "https://github.com/reptiloid/dotfiles.git"
 run_tasks: true
 run_app_image_script: true
 
+emacs_version: "30.1"
+
 apt_base_pkgs:
   - net-tools
   - unzip
@@ -15,11 +17,7 @@ apt_base_pkgs:
   - wget
   - nala
   - zsh
-  # - zoxide
   # - fzf
-  # - bat
-  # - exa
-  # - ripgrep
   - fonts-dejavu-extra
   - ufw
   - opensnitch
@@ -45,12 +43,10 @@ app_image_pkgs:
   # - brave
 
 nix_pkgs:
-  # - yazi
-  - fastfetch
+  # - fastfetch
   # - lazygit
   # - htop-vim
-  # - atuin
-  # - picom
+  - picom
 
 crates:
   - zoxide
