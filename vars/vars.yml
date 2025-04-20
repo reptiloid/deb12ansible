@@ -8,13 +8,16 @@ apt_base_pkgs:
   - unzip
   - tar
   - gpg
-  - zoxide
-  - fzf
-  - bat
+  - gcc
+  - build-essential
   - wget
   - nala
-  - exa
-  - ripgrep
+  - zsh
+  # - zoxide
+  # - fzf
+  # - bat
+  # - exa
+  # - ripgrep
   - fonts-dejavu-extra
   - ufw
   - opensnitch
@@ -40,9 +43,21 @@ app_image_pkgs:
   # - brave
 
 nix_pkgs:
-  - yazi
+  # - yazi
   - fastfetch
-  - lazygit
+  # - lazygit
   # - htop-vim
   # - atuin
   # - picom
+
+crates:
+  - zoxide
+  - bat
+  - yazi-fm
+  - eza
+  - ripgrep
+  - atuin
+  - cargo-list
+  - cargo-update
+  - topgrade
+  - crab-fetch

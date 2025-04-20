@@ -1,0 +1,19 @@
+---
+# - name: "Install (fuse3, jq) packages"
+#   become: true
+#   apt:
+#     update_cache: true
+#     pkg:
+#     - fuse3
+#     - jq
+
+- name: install rust by rustup
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+- name: install all common packages
+  shell: ~/.cargo/bin/rustup run stable cargo install {{ item }}
+  with_items: "{{ crates }}"
+
+# - name: "Install AppImage Pkgs"
+#   ansible.builtin.shell: "am -i {{ item }}"
+#   loop: "{{ app_image_pkgs }}"
