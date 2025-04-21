@@ -19,4 +19,4 @@
   become: true
   make:
     target: install
-    chdir: '/temp/emacs-{{ emacs_version }}'
+    chdir: '/tmp/emacs-{{ emacs_version }}'
