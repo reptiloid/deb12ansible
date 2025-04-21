@@ -22,15 +22,14 @@
     # - include_role:
     #     name: Rustup
 
-    - include_role:
-        name: Emacs
+    # - include_role:
+    #     name: Emacs
 
     # - include_role:
     #     name: Nix
 
+    - import_tasks: tasks/fzf.yml
     # - import_tasks: tasks/nf_fonts.yml
     # - import_tasks: tasks/kitty_terminal.yml
-    # - import_tasks: tasks/blesh.yml
-    # - import_tasks: tasks/batcat.yml
 
     # - import_tasks: tasks/yadm.yml

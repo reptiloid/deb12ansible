@@ -1,0 +1,16 @@
+---
+
+- name: clone fzf repo
+  ansible.builtin.git:
+    repo: "https://github.com/junegunn/fzf.git"
+    depth: 1
+    dest: "{{ ansible_env.HOME }}/.fzf"
+    clone: yes
+
+- name: fzf download bin
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.fzf/install --bin"
+
+- name: copy fzf bin
+  ansible.builtin.copy:
+    src: "{{ ansible_env.HOME }}/.fzf/bin/fzf"
+    dest: "{{ ansible_env.HOME }}/.local/bin/fzf"

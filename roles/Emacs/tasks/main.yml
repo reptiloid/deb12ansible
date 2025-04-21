@@ -1,6 +1,6 @@
 ---
 
-# - include_tasks: "emacsbuild.yml"
+- include_tasks: "emacsbuild.yml"
 - include_tasks: "doom.yml"
 
 # - include_tasks: "using-apt.yml"
