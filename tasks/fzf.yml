@@ -14,3 +14,4 @@
   ansible.builtin.copy:
     src: "{{ ansible_env.HOME }}/.fzf/bin/fzf"
     dest: "{{ ansible_env.HOME }}/.local/bin/fzf"
+    mode: u=rwx,g=r,o=r
