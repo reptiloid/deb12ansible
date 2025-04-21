@@ -1,0 +1,22 @@
+---
+- name: install emacs build dependencies
+  become: true
+  apt:
+    name: emacs
+    state: build-dep
+
+- name: emacs | build - (re-)download src
+  unarchive:
+    remote_src: yes
+    src: 'ftp://ftp.gnu.org/pub/gnu/emacs/emacs-{{ emacs_version }}.tar.xz'
+    dest: '/tmp/'
+
+- name: emacs | build - build
+  make:
+    chdir: '/tmp/emacs-{{ emacs_version }}'
+
+- name: emacs | build - install (built from src)
+  become: true
+  make:
+    target: install
+    chdir: '/tmp/emacs-{{ emacs_version }}'

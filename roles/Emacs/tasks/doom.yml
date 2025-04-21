@@ -1,0 +1,14 @@
+---
+
+- name: clone doomemacs repo
+  ansible.builtin.git:
+    repo: "https://github.com/doomemacs/doomemacs"
+    depth: 1
+    dest: "{{ ansible_env.HOME }}/.config/emacs"
+    clone: yes
+
+- name: doom sync
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.config/emacs/bin/doom sync"
+
+- name: doom env
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.config/emacs/bin/doom env"

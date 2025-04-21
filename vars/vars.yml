@@ -59,3 +59,4 @@ crates:
   - cargo-update
   - topgrade
   - crab-fetch
+  - fd-find
