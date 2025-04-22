@@ -7,11 +7,11 @@
     - include_vars: vars/vars.yml
     - import_tasks: tasks/apt_base_pkgs.yml
 
-    # - include_role:
-    #     name: Xorg
+    - include_role:
+        name: Xorg
 
-    # - include_role:
-    #     name: Qtile
+    - include_role:
+        name: Qtile
 
     # - include_role:
     #     name: AppImage
@@ -28,7 +28,7 @@
     # - include_role:
     #     name: Nix
 
-    - import_tasks: tasks/fzf.yml
+    # - import_tasks: tasks/fzf.yml
     # - import_tasks: tasks/nf_fonts.yml
     # - import_tasks: tasks/kitty_terminal.yml
 
